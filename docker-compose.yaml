@@ -1,0 +1,21 @@
+services:
+  remote-interpreter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+
+  lint-formatter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command:
+      - sh
+      - "-ce"
+      - |
+        set -e
+        git config --global --add safe.directory /app        
+        pre-commit run --all-files
