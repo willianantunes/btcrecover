@@ -1,0 +1,36 @@
+services:
+  remote-interpreter:
+    network_mode: none
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - ./.bash_history:/root/.bash_history
+  integration-tests:
+    network_mode: none
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command:
+      - sh
+      - "-ce"
+      - |
+        set -e
+        python run-all-tests.py --no-pause
+  lint-formatter:
+    network_mode: none
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command:
+      - sh
+      - "-ce"
+      - |
+        set -e
+        git config --global --add safe.directory /app        
+        pre-commit run --all-files

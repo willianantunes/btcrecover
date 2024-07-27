@@ -13,5 +13,7 @@ tokenlist.txt
 seeds.txt
 btcrecover-tokens-auto.txt
 site/
-possible_passwords.log
 passwordlist.txt
+*.hash
+*.log
+playground
