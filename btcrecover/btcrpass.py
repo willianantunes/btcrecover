@@ -4017,7 +4017,7 @@ class WalletSLIP39(object):
 
         if not shamir_mnemonic_available:
             print()
-            print("ERROR: Cannot import shamir-mnemonic which is required for SLIP39 wallets, install it via 'pip3 install shamir-mnemonic'")
+            print("ERROR: Cannot import shamir-mnemonic which is required for SLIP39 wallets, install it via 'pip3 install shamir-mnemonic[cli]'")
             exit()
 
         from . import btcrseed
