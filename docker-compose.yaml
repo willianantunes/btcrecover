@@ -7,6 +7,8 @@ services:
     volumes:
       - .:/app
       - ./.bash_history:/root/.bash_history
+    environment:
+      PYTHONWARNINGS: "ignore"
   integration-tests:
     network_mode: none
     build:

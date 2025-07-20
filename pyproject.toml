@@ -20,6 +20,8 @@ staking-deposit = {git = "https://github.com/ethereum/staking-deposit-cli.git", 
 sjcl = "~=0.2.1"
 groestlcoin-hash = "~=1.0.3"
 bsddb3 = "*"
+# https://github.com/ydataai/ydata-profiling/issues/1618#issuecomment-2225195008
+setuptools = "*"
 
 [build-system]
 requires = ["poetry-core"]
